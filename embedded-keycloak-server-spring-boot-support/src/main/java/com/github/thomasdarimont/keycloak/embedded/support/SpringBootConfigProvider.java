@@ -14,17 +14,17 @@ import java.util.Set;
  */
 public class SpringBootConfigProvider implements Config.ConfigProvider {
 
-    private static SpringBootConfigProvider INSTANCE;
+    private static SpringBootConfigProvider instance;
 
     private final KeycloakProperties keycloakProperties;
 
     public SpringBootConfigProvider(KeycloakProperties keycloakProperties) {
         this.keycloakProperties = keycloakProperties;
-        INSTANCE = this;
+        instance = this;
     }
 
     public static SpringBootConfigProvider getInstance() {
-        return INSTANCE;
+        return instance;
     }
 
     @Override

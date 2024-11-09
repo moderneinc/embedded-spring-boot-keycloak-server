@@ -18,7 +18,7 @@ public class EmbeddedKeycloakServer {
     @Bean
     public ApplicationListener<ApplicationReadyEvent> onApplicationReadyEventListener() {
 
-        return (evt) -> {
+        return evt -> {
 
             log.infof("Using Keycloak Version: %s", Version.VERSION_KEYCLOAK);
             log.infof("Enabled Keycloak Features (Deprecated): %s", Profile.getDeprecatedFeatures());

@@ -20,7 +20,7 @@ public class KeycloakUndertowRequestFilter extends AbstractRequestFilter impleme
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         request.setCharacterEncoding("UTF-8");
 
-        filter(createClientConnection(request), (session) -> {
+        filter(createClientConnection(request), session -> {
             try {
                 filterChain.doFilter(servletRequest, servletResponse);
             } catch (Exception e) {
